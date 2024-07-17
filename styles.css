@@ -1,0 +1,50 @@
+body{
+  background-color: blue;
+}
+
+
+/* DottedProgressImage.css */
+.dotted-progress-image {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+
+  background: green;
+}
+
+.dotted-progress-image__image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: auto;
+}
+
+.dotted-progress-image__progress {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-90deg);
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 2px dotted #ccc;
+  box-sizing: border-box;
+  animation: dotted-progress 2s linear infinite;
+
+  background-color: red;
+}
+
+@keyframes dotted-progress {
+  0% {
+    clip-path: polygon(0% 0%, 0% 100%, 0% 100%, 0% 0%);
+  }
+  50% {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 0%);
+  }
+  100% {
+    clip-path: polygon(0% 0%, 0% 100%, 0% 100%, 0% 0%);
+  }
+}
